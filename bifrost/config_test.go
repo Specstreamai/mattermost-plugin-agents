@@ -23,6 +23,7 @@ func TestSupportsNativeTools(t *testing.T) {
 		{llm.ServiceTypeAnthropic, true},
 		{llm.ServiceTypeGemini, true},
 		{llm.ServiceTypeVertex, true},
+		{llm.ServiceTypeGDCGemini, false},
 		{llm.ServiceTypeBedrock, false},
 		{llm.ServiceTypeCohere, false},
 		{llm.ServiceTypeMistral, false},

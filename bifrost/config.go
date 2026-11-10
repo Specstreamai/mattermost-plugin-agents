@@ -57,6 +57,9 @@ func serviceProvider(svc llm.ServiceConfig) (schemas.ModelProvider, error) {
 // and the effective-behavior checks used by built-in Mattermost tools so that
 // built-in fallbacks do not get suppressed when native tools would be stripped.
 func SupportsNativeTools(serviceType string) bool {
+	if serviceType == llm.ServiceTypeGDCGemini {
+		return false
+	}
 	provider, err := MapServiceTypeToProvider(serviceType)
 	if err != nil {
 		return false
